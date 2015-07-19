@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visual Discord's Hideout</title>
+        <link rel="icon" href="favicon.ico"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="css/superslides.css" rel="stylesheet" type="text/css"/>
+        <link href="css/layout.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco" />
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.superslides.min.js"></script>
+        <script src="js/jquery.hammer.min.js"></script>
+        <script src="js/jquery.animate-enhanced.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+    </head>
+    <body>
+        <style>
+            a {
+                font: 400 1.5em/125% 'Sue Ellen Francisco', Helvetica, Sans-serif;
+                color: #333;
+            }
+            .navbar-brand {
+               font: 400 2.0em/125% 'Sue Ellen Francisco', Helvetica, Sans-serif;
+               color: #333; 
+            }
+        </style>
+        <div style="relative">
+            <nav class="navbar navbar-default navbar-fixed-top affix-top" role="navigation" style="margin-bottom:0px;">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">Visual Discord</a>
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerLinks" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+               </div>
+               <div class="navbar-collapse collapse" id="headerLinks">
+                    <ul class="nav navbar-nav" id="headerLinks" style="padding-top:10px">
+                        <li><a href="portfolio">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                  </ul>
+               </div>
+            </nav>
+        </div>
+        <div class="loading-container">
+            <div class="pulse"></div>
+        </div>
+
+        <div id="slides" style="position: absolute">
+        <ul class="slides-container">
+          <li>
+            <img src="img/cuteButterflies.jpg" alt="">
+            <div class="container">
+              <h1></h1>
+              <p>
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="img/bookButterfly.jpg" alt="">
+            <div class="container">
+              <h1></h1>
+              <div class="contrast">
+                <p>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="img/crane2.jpg" alt="">
+            <div class="container">
+              <h1></h1>
+              <div class="contrast">
+                <p></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <nav class="slides-navigation">
+          <a href="#" class="next">
+            <i class="icon-chevron-right"></i>
+          </a>
+          <a href="#" class="prev">
+            <i class="icon-chevron-left"></i>
+          </a>
+        </nav>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+              $(document).on('init.slides', function() {
+                $('.loading-container').fadeOut(function() {
+                  $(this).remove();
+                });
+              });
+
+              $('#slides').superslides({
+                slide_easing: 'easeInOutCubic',
+                slide_speed: 800,
+                pagination: true,
+                hashchange: true,
+                scrollable: true
+              });
+
+              document.ontouchmove = function(e) {
+                e.preventDefault();
+              };
+              $('#slides').hammer().on('swipeleft', function() {
+                $(this).superslides('animate', 'next');
+              });
+
+              $('#slides').hammer().on('swiperight', function() {
+                $(this).superslides('animate', 'prev');
+              });
+            });
+        </script>
+    </body>
+</html>
