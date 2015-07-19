@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco" />
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <meta name="viewport" content="initial-scale=1">
     </head>
     <body>
         <style>
@@ -51,13 +52,16 @@
             hr {
                 color: black;
             }
+            .navbar-default .navbar-toggle {
+              border-color: transparent;
+            }
 
         </style>
         <div style="relative">
             <nav class="navbar navbar-default navbar-fixed-top affix-top" role="navigation" style="margin-bottom:0px;">
                <div class="navbar-header">
                   <a class="navbar-brand" href="index.html">Visual Discord</a>
-                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerLinks" aria-expanded="false">
+                   <button type="button" class="navbar-toggle collapsed btn-default" data-toggle="collapse" data-target="#headerLinks" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -75,7 +79,7 @@
         </div>
         <div>
             <img src="img/about.jpg" id="aboutImg" class="img-responsive hidden-xs hidden-sm">
-            <img src="img/about-sm.png" id="aboutImg" class="img-responsive visible-xs visible-sm">
+            <img src="img/about-sm.png" class="img-responsive visible-xs visible-sm" style="height:500px;padding-top:50px;width:100%" />
             <div class="container" style="margin-top:20px;">
                 <h1 class="col-md-offset-5">About Me</h1>
                 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
